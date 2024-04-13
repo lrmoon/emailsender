@@ -14,7 +14,7 @@ month = now.month
 day_of_week = now.weekday()
 date_of_birth = dt.datetime(year=1998, month=7, day=27)
 
-my_email = env('EMAIL')
+my_email = env('MYEMAIL')
 password = env('EMAIL_PASSWORD')
 
 if 5 == day_of_week:
@@ -27,7 +27,7 @@ if 5 == day_of_week:
         connection.login(user=my_email, password=password)
         connection.sendmail(
             from_addr=my_email,
-            to_addrs="brownjoel7600@gmail.com",
+            to_addrs=env("TOEMAIL"),
             msg=f"Subject:this is my quote that was random asf\n\n{quote}"
         )
 
